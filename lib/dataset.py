@@ -29,12 +29,10 @@ class Dataset(list):
         
         self.clear()
         self.extend(np.array(slice).astype(self.dtype))
-       
-        
-                        
+                       
     def parse_value(self, key, value):
         if key == 'start_time':
-            return time.mktime(time.localtime(float(value)))
+            return time.localtime(float(value))
         try:
             return int(value)
         except ValueError:
